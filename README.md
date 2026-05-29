@@ -1,42 +1,47 @@
 # Cheungfun 🥟
 
-A coding agent that writes code like rolling rice noodle sheets — smooth, precise, and layered.
+A coding agent for learning how AI coding agents work.
 
-## What is Cheungfun?
+This is a study project — reading source code from OpenCode, Claude Code, Codex and others, then rebuilding the core ideas from scratch.
 
-Cheungfun is a coding agent built for terminal workflows. It reads your codebase, understands your intent, and executes changes with the precision of a dim sum chef.
+## Focus
 
-## Features
+Currently focused on building a GUI-based coding agent. The terminal CLI is a stepping stone.
 
-- Terminal-native coding agent
-- Multi-model support (MiMo, Claude, GPT, etc.)
-- File reading, writing, and editing
-- Shell command execution
-- Git-aware workflows
-- Tool-use architecture
+## Stack
+
+- TypeScript
+- OpenAI-compatible API (MiMo, etc.)
+
+## Project Structure
+
+```
+src/
+├── index.ts        # Entry point
+├── agent.ts        # Agent loop & conversation
+├── provider.ts     # LLM provider abstraction
+├── config.ts       # Configuration
+└── tools/
+    ├── registry.ts # Tool registration system
+    ├── file.ts     # File read/write/edit
+    ├── shell.ts    # Shell command execution
+    └── search.ts   # Code search
+vendor/             # (gitignored) Reference source code
+├── codex/          # OpenAI Codex
+├── opencode/       # OpenCode
+└── claude-code-source/  # Claude Code (reconstructed)
+```
 
 ## Quick Start
 
 ```bash
 npm install
-npm run build
-npm start
+npm run dev -- "your prompt here"
 ```
 
-## Architecture
+## Reference
 
-```
-src/
-├── index.ts        # Entry point
-├── agent.ts        # Agent loop & conversation management
-├── tools/          # Tool implementations
-│   ├── registry.ts # Tool registration system
-│   ├── file.ts     # File read/write/edit
-│   ├── shell.ts    # Shell command execution
-│   └── search.ts   # Code search
-├── provider.ts     # LLM provider abstraction
-└── config.ts       # Configuration
-```
+Source code in `vendor/` is for study only, not part of this project.
 
 ## License
 
